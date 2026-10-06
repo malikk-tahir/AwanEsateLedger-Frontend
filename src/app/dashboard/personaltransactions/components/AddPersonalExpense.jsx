@@ -205,23 +205,16 @@ const AddPersonalExpense = ({ open, onOpenChange }) => {
                   control={form.control}
                   name="date"
                   render={({ field }) => (
-                    <FormItem className="w-full min-w-full">
+                    <FormItem className="min-w-0">
                       <FormLabel className="text-slate-200 text-xs sm:text-sm">
                         Date *
                       </FormLabel>
                       <FormControl>
-                        <div className="relative w-full min-w-full">
-                          <Input
-                            type="date"
-                            onClick={(e) => {
-                              if (e.currentTarget.showPicker) {
-                                e.currentTarget.showPicker();
-                              }
-                            }}
-                            className="w-full min-w-full block bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] h-9 sm:h-10 text-xs sm:text-sm cursor-pointer pr-3"
-                            {...field}
-                          />
-                        </div>
+                        <Input
+                          type="date"
+                          className="bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] h-9 sm:h-10 text-xs sm:text-sm"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage className="text-red-400 text-xs" />
                     </FormItem>
