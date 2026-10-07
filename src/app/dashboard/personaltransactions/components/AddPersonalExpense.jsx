@@ -201,25 +201,34 @@ const AddPersonalExpense = ({ open, onOpenChange }) => {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="date"
-                  render={({ field }) => (
-                    <FormItem className="min-w-0">
-                      <FormLabel className="text-slate-200 text-xs sm:text-sm">
-                        Date *
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="date"
-                          className="bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] h-9 sm:h-10 text-xs sm:text-sm"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-400 text-xs" />
-                    </FormItem>
-                  )}
-                />
+<FormField
+  control={form.control}
+  name="date"
+  render={({ field }) => (
+    <FormItem className="w-full">
+      <FormLabel className="text-slate-200 text-xs sm:text-sm">
+        Date *
+      </FormLabel>
+      <FormControl>
+        <div className="relative w-full">
+          <Input
+            type="date"
+            onClick={(e) => {
+              if (e.currentTarget.showPicker) {
+                e.currentTarget.showPicker();
+              }
+            }}
+            className="w-full bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] h-9 sm:h-10 text-xs sm:text-sm cursor-pointer appearance-none -webkit-appearance-none [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:left-0 [&::-webkit-calendar-picker-indicator]:top-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer px-3 pr-9"
+            {...field}
+          />
+          {/* Custom Calendar Icon position matching Shadcn/Tailwind style */}
+          <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+        </div>
+      </FormControl>
+      <FormMessage className="text-red-400 text-xs" />
+    </FormItem>
+  )}
+/>
               </div>
 
               <FormField
