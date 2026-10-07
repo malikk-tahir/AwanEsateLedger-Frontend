@@ -38,7 +38,7 @@ export default function SinglePropertyPage({ params }) {
   const { data: response, isLoading, isError, refetch } = usePropertyById(id);
   const property = response?.data;
 
-  console.log(property);
+  // console.log(property);
   
 
   if (isLoading) {

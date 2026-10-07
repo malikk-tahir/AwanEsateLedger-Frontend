@@ -10,6 +10,7 @@ import { useCreateProject } from "@/hooks/useConstruction";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { formatDateForInput } from "@/lib/utils";
+import {FormDatePicker} from "@/components/ui/form-date-picker";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -196,44 +197,18 @@ const CreateConstruction = ({ open, onOpenChange }) => {
 
               {/* Start Date & Expected Completion Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <FormField
+                <FormDatePicker
                   control={form.control}
                   name="startDate"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-slate-200 text-xs sm:text-sm">
-                        Start Date
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="date"
-                          className="bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] h-9 sm:h-10 text-xs sm:text-sm"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-400 text-xs" />
-                    </FormItem>
-                  )}
+                  label="Start Date"
+                  required
                 />
 
-                <FormField
+                <FormDatePicker
                   control={form.control}
                   name="expectedCompletionDate"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-slate-200 text-xs sm:text-sm">
-                        Expected Completion
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="date"
-                          className="bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] h-9 sm:h-10 text-xs sm:text-sm"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-400 text-xs" />
-                    </FormItem>
-                  )}
+                  label="Expected Completion"
+                  required
                 />
               </div>
             </div>

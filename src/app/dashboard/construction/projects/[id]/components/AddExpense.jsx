@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formatDateForInput } from "@/lib/utils";
+import {FormDatePicker} from "@/components/ui/form-date-picker";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -205,22 +206,11 @@ const AddExpense = ({ open, onOpenChange }) => {
                 )}
               />
 
-              <FormField
+              <FormDatePicker
                 control={form.control}
                 name="date"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-slate-200 text-xs sm:text-sm">Date *</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="date"
-                        className="bg-slate-900/60 border-slate-700 text-white focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange [color-scheme:dark] text-xs sm:text-sm h-9 sm:h-10"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage className="text-red-400 text-xs" />
-                  </FormItem>
-                )}
+                label="Date"
+                required
               />
             </div>
 

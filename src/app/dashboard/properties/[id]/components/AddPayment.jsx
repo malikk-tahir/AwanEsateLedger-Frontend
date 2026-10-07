@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {formatDateForInput} from "@/lib/utils"
+import {FormDatePicker} from "@/components/ui/form-date-picker";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -138,24 +139,11 @@ const AddPayment = ({ open, onOpenChange, propertyId}) => {
               )}
             />
 
-            <FormField
+            <FormDatePicker
               control={form.control}
               name="date"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-slate-200 text-xs sm:text-sm">
-                    Transaction Date *
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      type="date"
-                      className="bg-slate-900/60 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-secondary-orange focus-visible:ring-1 focus-visible:border-secondary-orange h-9 sm:h-10 text-xs sm:text-sm"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage className="text-red-400 text-xs" />
-                </FormItem>
-              )}
+              label="Transaction Date"
+              required
             />
 
             <FormField

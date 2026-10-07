@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { filterSchema } from "@/schemas/personalSchema";
+import {FormDatePicker} from "@/components/ui/form-date-picker";
 import {
   Form,
   FormControl,
@@ -160,40 +161,16 @@ const PersonalTransactions = () => {
               )}
             />
 
-            <FormField
+            <FormDatePicker
               control={form.control}
               name="startDate"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-[11px] text-slate-400">Start Date</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="date"
-                      {...field}
-                      className="bg-slate-900/80 border-slate-800 text-white text-xs h-9 focus-visible:ring-secondary-orange [color-scheme:dark]"
-                    />
-                  </FormControl>
-                  <FormMessage className="text-[11px] text-rose-400" />
-                </FormItem>
-              )}
+              label="Start Date"
             />
 
-            <FormField
+            <FormDatePicker
               control={form.control}
               name="endDate"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-[11px] text-slate-400">End Date</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="date"
-                      {...field}
-                      className="bg-slate-900/80 border-slate-800 text-white text-xs h-9 focus-visible:ring-secondary-orange [color-scheme:dark]"
-                    />
-                  </FormControl>
-                  <FormMessage className="text-[11px] text-rose-400" />
-                </FormItem>
-              )}
+              label="End Date"
             />
           </div>
 
