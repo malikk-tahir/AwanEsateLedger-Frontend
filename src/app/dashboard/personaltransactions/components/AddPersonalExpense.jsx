@@ -32,7 +32,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { X, Loader2 } from "lucide-react";
+import { X, Loader2, Calendar } from "lucide-react";
 
 const AddPersonalExpense = ({ open, onOpenChange }) => {
   const form = useForm({
