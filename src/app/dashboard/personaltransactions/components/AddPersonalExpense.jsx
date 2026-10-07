@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formatDateForInput } from "@/lib/utils";
-import FormDatePicker from "@/components/ui/form-date-picker";
+import {FormDatePicker} from "@/components/ui/form-date-picker";
 import {
   AlertDialog,
   AlertDialogCancel,
