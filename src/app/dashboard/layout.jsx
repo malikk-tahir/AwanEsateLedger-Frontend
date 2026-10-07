@@ -59,7 +59,7 @@ export default function DashboardLayout({ children }) {
                     {userData?.name || "Admin User"}
                   </span>
                   <span className="text-[10px] text-slate-400 mt-0.5">
-                    {userData?.role || "Agency Manager"}
+                    {userData?.email==="amjadawaninfo@gmail.com" ? "Owner" : "Agency Manager"}
                   </span>
                 </div>
               </div>
